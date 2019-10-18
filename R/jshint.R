@@ -12,9 +12,25 @@
 #'
 #' @name JSHint
 #'
+#' @example examples/ex-jshint.R
 jshint_file <- function(file, options = jshint_options()) {
+  file <- normalizePath(path = file, mustWork = TRUE)
+  cat(cli::rule(left = sprintf("Checking %s", basename(file))), "\n")
   file <- readLines(con = file)
-  jshint(code = file, options = options)
+  output <- jshint(code = file, options = options)
+  if (nrow(output$errors) == 0) {
+    # cli::cli_alert_success("No errors.")
+    cat(cli::col_green("No errors found."), "\n")
+  } else {
+    errs <- output$errors
+    errs <- errs[order(errs$line), ]
+    cat(cli::col_red(sprintf("%s errors found.", nrow(errs))), "\n")
+    for (i in seq_len(nrow(errs))) {
+      # cli::cli_alert_danger()
+      cat(cli::col_red(sprintf(" - Line %s: %s", errs$line[i], errs$reason[i])), "\n")
+    }
+  }
+  invisible(output)
 }
 
 #' @param code Character vector where each element represent a line of JavaScript code.
@@ -31,7 +47,8 @@ jshint <- function(code, options = jshint_options()) {
   )
   ctx$assign("code", code)
   ctx$assign("options", options)
-  ctx$eval("JSHINT(code, options);")
+  ctx$assign("predef", list())
+  ctx$eval("JSHINT(code, options, predef);")
   output <- ctx$get("JSHINT.data()")
   class(output) <- c(class(output), "jshint")
   return(output)

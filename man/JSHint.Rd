@@ -46,3 +46,13 @@ a \code{list} with the diagnosis of the JavaScript code
 JSHint is a tool that helps to detect
  errors and potential problems in your JavaScript code.
 }
+\examples{
+
+# Check code from a charactrer vector
+jshint(c("var a = 2;", "var foo = 1;", "b = 3", "a + c"))
+
+
+# From a file
+path <- system.file("testfiles/example.js", package = "jstools")
+jshint_file(file = path)
+}

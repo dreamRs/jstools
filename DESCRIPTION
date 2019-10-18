@@ -10,5 +10,6 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    V8
+    V8,
+    cli
 RoxygenNote: 6.1.1
