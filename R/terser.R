@@ -15,7 +15,7 @@
 #' @example examples/ex-terser.R
 terser_file <- function(input, options = terser_options(), output = NULL) {
   input <- normalizePath(path = input, mustWork = TRUE)
-  input <- readLines(con = input)
+  input <- readLines(con = input, encoding = "UTF-8")
   result <- terser(code = input, options = options)
   if (!is.null(result$error)) {
     message(result$error$name, result$error$message)

@@ -15,7 +15,7 @@
 #' @example examples/ex-prettier.R
 prettier_file <- function(input, options = prettier_options(), output = NULL) {
   input <- normalizePath(path = input, mustWork = TRUE)
-  input <- readLines(con = input)
+  input <- readLines(con = input, encoding = "UTF-8")
   result <- prettier(code = input, options = options)
   if (!is.null(output)) {
     writeLines(text = result, con = output)
