@@ -4,7 +4,7 @@
 #' @description JSHint is a tool that helps to detect
 #'  errors and potential problems in your JavaScript code.
 #'
-#' @param file Path to a JavaScript file.
+#' @param input Path to a JavaScript file.
 #' @param options Options for JSHint, see \url{https://jshint.com/docs/options}.
 #'
 #' @return a \code{list} with the diagnosis of the JavaScript code
@@ -13,11 +13,11 @@
 #' @name JSHint
 #'
 #' @example examples/ex-jshint.R
-jshint_file <- function(file, options = jshint_options()) {
-  file <- normalizePath(path = file, mustWork = TRUE)
-  cat(cli::rule(left = sprintf("Checking %s", basename(file))), "\n")
-  file <- readLines(con = file)
-  output <- jshint(code = file, options = options)
+jshint_file <- function(input, options = jshint_options()) {
+  input <- normalizePath(path = input, mustWork = TRUE)
+  cat(cli::rule(left = sprintf("Checking %s", basename(input))), "\n")
+  input <- readLines(con = input)
+  output <- jshint(code = input, options = options)
   if (nrow(output$errors) == 0) {
     # cli::cli_alert_success("No errors.")
     cat(cli::col_green("No errors found."), "\n")

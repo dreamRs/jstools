@@ -7,7 +7,7 @@
 \alias{jshint_options}
 \title{JSHint}
 \usage{
-jshint_file(file, options = jshint_options())
+jshint_file(input, options = jshint_options())
 
 jshint(code, options = jshint_options())
 
@@ -15,7 +15,7 @@ jshint_options(undef = TRUE, unused = "vars", browser = TRUE,
   jquery = FALSE, devel = FALSE, ...)
 }
 \arguments{
-\item{file}{Path to a JavaScript file.}
+\item{input}{Path to a JavaScript file.}
 
 \item{options}{Options for JSHint, see \url{https://jshint.com/docs/options}.}
 
@@ -48,11 +48,11 @@ JSHint is a tool that helps to detect
 }
 \examples{
 
-# Check code from a charactrer vector
+# Check code from a character vector
 jshint(c("var a = 2;", "var foo = 1;", "b = 3", "a + c"))
 
 
 # From a file
 path <- system.file("testfiles/example.js", package = "jstools")
-jshint_file(file = path)
+jshint_file(input = path)
 }
