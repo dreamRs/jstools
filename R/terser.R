@@ -5,26 +5,26 @@
 #'
 #' @param input Path to JavaScript file(s).
 #' @param options Options for terser, see \url{https://terser.org/docs/api-reference}.
-#' @param output_file Path where to write optimized code.
+#' @param output Path where to write optimized code.
 #'
-#' @return a\code{list}.
+#' @return a \code{list}.
 #' @export
 #'
 #' @name terser
 #'
 #' @example examples/ex-terser.R
-terser_file <- function(input, options = terser_options(), output_file = NULL) {
+terser_file <- function(input, options = terser_options(), output = NULL) {
   input <- normalizePath(path = input, mustWork = TRUE)
   input <- readLines(con = input)
-  output <- terser(code = input, options = options)
-  if (!is.null(output$error)) {
-    message(output$error$name, output$error$message)
+  result <- terser(code = input, options = options)
+  if (!is.null(result$error)) {
+    message(result$error$name, result$error$message)
   } else {
-    if (!is.null(output_file)) {
-      writeLines(text = output$code, con = output_file)
+    if (!is.null(output)) {
+      writeLines(text = result$code, con = output)
     }
   }
-  return(invisible(output))
+  return(invisible(result))
 }
 
 #' @param code Character vector where each element represent a line of JavaScript code,

@@ -6,7 +6,7 @@
 \alias{terser_options}
 \title{terser}
 \usage{
-terser_file(input, options = terser_options(), output_file = NULL)
+terser_file(input, options = terser_options(), output = NULL)
 
 terser(code, options = terser_options())
 
@@ -17,7 +17,7 @@ terser_options(...)
 
 \item{options}{Options for terser, see \url{https://terser.org/docs/api-reference}.}
 
-\item{output_file}{Path where to write optimized code.}
+\item{output}{Path where to write optimized code.}
 
 \item{code}{Character vector where each element represent a line of JavaScript code,
 or a list of character vectors.}
@@ -25,7 +25,7 @@ or a list of character vectors.}
 \item{...}{Other options to use, see \url{https://terser.org/docs/api-reference} for details.}
 }
 \value{
-a\code{list}.
+a \code{list}.
 }
 \description{
 JavaScript parser, mangler and compressor toolkit for ES6+.
