@@ -3,4 +3,7 @@
 export(jshint)
 export(jshint_file)
 export(jshint_options)
+export(terser)
+export(terser_file)
+export(terser_options)
 importFrom(V8,v8)
