@@ -6,7 +6,8 @@ Authors@R: c(
   person("Fanny", "Meyer", role = "aut"),
   person("Anton", "Kovalyov", role = c("ctb", "cph"), comment = "JSHint library"),
   person("James", "Long", role = c("ctb", "cph"), comment = "Prettier library"),
-  person("Mihai", "Bazon", role = c("ctb", "cph"), comment = "Terser library"))
+  person("Mihai", "Bazon", role = c("ctb", "cph"), comment = "Terser library"),
+  person("Matt", "Basta", role = c("ctb", "cph"), comment = "Crass library"))
 Description: Tools to detect errors in JavaScript code, help format code.
 License: GPL-3
 Encoding: UTF-8
