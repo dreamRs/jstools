@@ -1,7 +1,7 @@
 
 #' @title Prettier
 #'
-#' @description JavaScript parser, mangler and compressor toolkit for ES6+.
+#' @description Prettier is an opinionated code formatter.
 #'
 #' @param input Path to JavaScript file(s).
 #' @param options Options for terser, see \url{https://prettier.io/docs/en/options.html }.

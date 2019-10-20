@@ -4,7 +4,9 @@ Version: 0.0.0.9000
 Authors@R: c(
   person("Victor", "Perrier", email = "victor.perrier@dreamrs.fr", role = c("aut", "cre")),
   person("Fanny", "Meyer", role = "aut"),
-  person("Anton", "Kovalyov", role = c("ctb", "cph"), comment = "jshint JavaScript library"))
+  person("Anton", "Kovalyov", role = c("ctb", "cph"), comment = "JSHint library"),
+  person("James", "Long", role = c("ctb", "cph"), comment = "Prettier library"),
+  person("Mihai", "Bazon", role = c("ctb", "cph"), comment = "Terser library"))
 Description: Tools to detect errors in JavaScript code, help format code.
 License: GPL-3
 Encoding: UTF-8

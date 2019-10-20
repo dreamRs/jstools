@@ -27,7 +27,7 @@ prettier_options(...)
 a \code{character}.
 }
 \description{
-JavaScript parser, mangler and compressor toolkit for ES6+.
+Prettier is an opinionated code formatter.
 }
 \examples{
 
