@@ -50,3 +50,12 @@ prettier <- function(code, options = prettier_options()) {
 prettier_options <- function(...) {
   list(...)
 }
+
+
+prettier_addin <- function() {
+  context <- rstudioapi::getSourceEditorContext()
+  prettier_file(input = context$path, output = context$path)
+}
+
+
+

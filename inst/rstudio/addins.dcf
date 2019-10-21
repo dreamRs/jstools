@@ -3,3 +3,7 @@ Description: Launch JSHint on active JS script
 Binding: jshint_addin
 Interactive: false
 
+Name: Prettier
+Description: Launch Prettier on active JS script
+Binding: prettier_addin
+Interactive: false
