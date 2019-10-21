@@ -7,9 +7,13 @@ Authors@R: c(
   person("Anton", "Kovalyov", role = c("ctb", "cph"), comment = "JSHint library"),
   person("James", "Long", role = c("ctb", "cph"), comment = "Prettier library"),
   person("Mihai", "Bazon", role = c("ctb", "cph"), comment = "Terser library"),
-  person("Matt", "Basta", role = c("ctb", "cph"), comment = "Crass library"))
+  person("Matt", "Basta", role = c("ctb", "cph"), comment = "Crass library"),
+  person("Babel maintainers", role = c("ctb", "cph"), comment = "Babel library"),
+  person("Sergey", "Kryzhanovsky", role = c("ctb", "cph"), comment = "CSSO library"))
 Description: Set of tools to work with JavaScript and CSS: detect errors in
   JavaScript code, help format code, minify JS and CSS.
+URL: https://github.com/dreamRs/jstools
+BugReports: https://github.com/dreamRs/jstools/issues
 License: GPL-3
 Encoding: UTF-8
 LazyData: true 
