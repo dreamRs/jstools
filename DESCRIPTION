@@ -1,5 +1,5 @@
 Package: jstools
-Title: Tools to Work with JavaScript Code
+Title: Tools to Work with JavaScript and CSS
 Version: 0.0.0.9000
 Authors@R: c(
   person("Victor", "Perrier", email = "victor.perrier@dreamrs.fr", role = c("aut", "cre")),
@@ -8,7 +8,8 @@ Authors@R: c(
   person("James", "Long", role = c("ctb", "cph"), comment = "Prettier library"),
   person("Mihai", "Bazon", role = c("ctb", "cph"), comment = "Terser library"),
   person("Matt", "Basta", role = c("ctb", "cph"), comment = "Crass library"))
-Description: Tools to detect errors in JavaScript code, help format code.
+Description: Set of tools to work with JavaScript and CSS: detect errors in
+  JavaScript code, help format code, minify JS and CSS.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true 
