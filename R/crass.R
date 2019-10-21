@@ -12,7 +12,7 @@
 #'
 #' @name crass
 #'
-#' @example
+#' @example examples/ex-crass.R
 crass_file <- function(input, pretty = FALSE, output = NULL) {
   input <- normalizePath(path = input, mustWork = TRUE)
   input <- readLines(con = input, encoding = "UTF-8")

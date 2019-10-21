@@ -28,3 +28,10 @@ crass
 
 A CSS minification, pretty printing, and general utility library written in JS.
 }
+\examples{
+
+crass("b {font-weight: bold;}")
+
+path <- system.file("testfiles/example.css", package = "jstools")
+crass_file(input = path)
+}
