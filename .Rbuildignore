@@ -1,3 +1,4 @@
 ^jstools\.Rproj$
 ^\.Rproj\.user$
 ^examples$
+^README\.Rmd$
