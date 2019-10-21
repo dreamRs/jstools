@@ -18,7 +18,7 @@ jshint_file <- function(input, options = jshint_options()) {
   cat(cli::rule(left = sprintf("Checking %s", basename(input))), "\n")
   input <- readLines(con = input, encoding = "UTF-8")
   output <- jshint(code = input, options = options)
-  if (nrow(output$errors) == 0) {
+  if (NROW(output$errors) == 0) {
     # cli::cli_alert_success("No errors.")
     cat(cli::col_green("No errors found."), "\n")
   } else {
