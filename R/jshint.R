@@ -83,3 +83,11 @@ jshint_options <- function(undef = TRUE, unused = "vars",
   )
 }
 
+
+jshint_addin <- function() {
+  context <- rstudioapi::getSourceEditorContext()
+  jshint_file(input = context$path)
+}
+
+
+

@@ -14,5 +14,6 @@ Encoding: UTF-8
 LazyData: true 
 Imports: 
     V8,
-    cli
+    cli,
+    rstudioapi
 RoxygenNote: 6.1.1

@@ -1,0 +1,5 @@
+Name: JSHint
+Description: Launch JSHint on active JS script
+Binding: jshint_addin
+Interactive: false
+
