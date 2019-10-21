@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
 > Set of tools to work with JavaScript and CSS (and addins to
@@ -45,7 +47,7 @@ prettier_file(input = "path/to/file.js", output = "path/to/reformated.js")
 ```
 
 In Rstudio, you can use addin “Prettier” to reformat the current script
-(careful, it will overide it).
+(careful, it will overwrite it).
 
 ## Terser : JavaScript compressor
 
@@ -63,6 +65,7 @@ You can compress a file (or several) with:
 
 ``` r
 terser_file(input = "path/to/file.js", output = "path/to/file.min.js")
+terser_file(input = c("path/to/file1.js", "path/to/file2.js"), output = "path/to/file.min.js")
 ```
 
 ## JSHint : code validation
@@ -113,7 +116,7 @@ jshint_file(input = path, options = jshint_options(jquery = TRUE, globals = list
 ```
 
 You can check several scripts at once (for example custom Shiny input
-bindings in {shinyWidgets}:
+bindings in {shinyWidgets}):
 
 ``` r
 bindings <- list.files(

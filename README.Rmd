@@ -17,6 +17,7 @@ library(jstools)
 # jstools
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
 > Set of tools to work with JavaScript and CSS (and addins to interactively use them in RStudio)
@@ -53,7 +54,7 @@ You can reformat a file with:
 prettier_file(input = "path/to/file.js", output = "path/to/reformated.js")
 ```
 
-In Rstudio, you can use addin "Prettier" to reformat the current script (careful, it will overide it).
+In Rstudio, you can use addin "Prettier" to reformat the current script (careful, it will overwrite it).
 
 
 
@@ -71,6 +72,7 @@ You can compress a file (or several) with:
 
 ```{r, eval=FALSE}
 terser_file(input = "path/to/file.js", output = "path/to/file.min.js")
+terser_file(input = c("path/to/file1.js", "path/to/file2.js"), output = "path/to/file.min.js")
 ```
 
 
@@ -99,7 +101,7 @@ To validate a Shiny script, you can add `jQuery` and `Shiny` as global variables
 jshint_file(input = path, options = jshint_options(jquery = TRUE, globals = list("Shiny")))
 ```
 
-You can check several scripts at once (for example custom Shiny input bindings in {shinyWidgets}:
+You can check several scripts at once (for example custom Shiny input bindings in {shinyWidgets}):
 
 ```{r, eval=FALSE}
 bindings <- list.files(
