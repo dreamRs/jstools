@@ -3,7 +3,7 @@
 \name{crass}
 \alias{crass}
 \alias{crass_file}
-\title{crass}
+\title{Crass - CSS minification and pretty printing}
 \usage{
 crass_file(input, pretty = FALSE, output = NULL)
 
@@ -22,8 +22,10 @@ crass(code, pretty = FALSE)
 a \code{character}.
 }
 \description{
-A CSS minification, pretty printing,
- and general utility library written in JS.
+Crass is one of only a handful of CSS minifiers that
+ creates a full parse tree of the CSS. Most other CSS minifiers
+ operate on the string source instead, which makes it impossible
+ to perform all types of optimizations.
 }
 \examples{
 

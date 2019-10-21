@@ -1,8 +1,10 @@
 
-#' @title crass
+#' @title Crass - CSS minification and pretty printing
 #'
-#' @description A CSS minification, pretty printing,
-#'  and general utility library written in JS.
+#' @description Crass is one of only a handful of CSS minifiers that
+#'  creates a full parse tree of the CSS. Most other CSS minifiers
+#'  operate on the string source instead, which makes it impossible
+#'  to perform all types of optimizations.
 #'
 #' @param input Path to a CSS file.
 #' @param pretty Pretty print result? Otherwise result is minified.

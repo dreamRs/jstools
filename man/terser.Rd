@@ -4,7 +4,7 @@
 \alias{terser}
 \alias{terser_file}
 \alias{terser_options}
-\title{Terser}
+\title{Terser - JavaScript compressor}
 \usage{
 terser_file(input, options = terser_options(), output = NULL)
 

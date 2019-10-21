@@ -1,5 +1,5 @@
 
-#' @title Babel
+#' @title Babel - compiler for writing next generation JavaScript
 #'
 #' @description Babel is a tool that helps you write code in the latest version of
 #'  JavaScript. When your supported environments don't support certain features
@@ -9,7 +9,7 @@
 #' @param options Options for terser, see \url{https://babeljs.io/docs/en/options}.
 #' @param output Path where to write transformed code.
 #'
-#' @return a \code{list}.
+#' @return a \code{character}.
 #' @export
 #'
 #' @name babel
@@ -25,7 +25,7 @@ babel_file <- function(input, options = babel_options(), output = NULL) {
   return(invisible(result))
 }
 
-#' @param code Character vector where each element represent a line of CSS code.
+#' @param code Character vector where each element represent a line of JS code.
 #'
 #' @rdname babel
 #'
@@ -47,7 +47,6 @@ babel <- function(code, options = babel_options()) {
 #' @param sourceType Default to \code{"script"} : parse the file using the ECMAScript Script grammar.
 #' @param ... Other options to use, see \url{https://babeljs.io/docs/en/options} for details.
 #'
-#' @return a \code{list}.
 #' @export
 #'
 #' @rdname babel

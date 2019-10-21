@@ -1,5 +1,5 @@
 
-#' @title JSHint
+#' @title JSHint - code validation
 #'
 #' @description JSHint is a tool that helps to detect
 #'  errors and potential problems in your JavaScript code.
@@ -10,7 +10,7 @@
 #' @return a \code{list} with the diagnosis of the JavaScript code
 #' @export
 #'
-#' @name JSHint
+#' @name jshint
 #'
 #' @example examples/ex-jshint.R
 jshint_file <- function(input, options = jshint_options()) {
@@ -35,7 +35,7 @@ jshint_file <- function(input, options = jshint_options()) {
 
 #' @param code Character vector where each element represent a line of JavaScript code.
 #'
-#' @rdname JSHint
+#' @rdname jshint
 #'
 #' @export
 #'
@@ -67,7 +67,7 @@ jshint <- function(code, options = jshint_options()) {
 #'  because, for example, console.log breaks in legacy versions of Internet Explorer.
 #' @param ... Other options to use, see \url{https://jshint.com/docs/options} for details.
 #'
-#' @rdname JSHint
+#' @rdname jshint
 #'
 #' @export
 jshint_options <- function(undef = TRUE, unused = "vars",

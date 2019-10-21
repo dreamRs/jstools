@@ -4,7 +4,7 @@
 \alias{babel}
 \alias{babel_file}
 \alias{babel_options}
-\title{Babel}
+\title{Babel - compiler for writing next generation JavaScript}
 \usage{
 babel_file(input, options = babel_options(), output = NULL)
 
@@ -19,7 +19,7 @@ babel_options(presets = list("es2015"), sourceType = "script", ...)
 
 \item{output}{Path where to write transformed code.}
 
-\item{code}{Character vector where each element represent a line of CSS code.}
+\item{code}{Character vector where each element represent a line of JS code.}
 
 \item{presets}{Preset to use, default to \code{"es2015"}.}
 
@@ -28,9 +28,7 @@ babel_options(presets = list("es2015"), sourceType = "script", ...)
 \item{...}{Other options to use, see \url{https://babeljs.io/docs/en/options} for details.}
 }
 \value{
-a \code{list}.
-
-a \code{list}.
+a \code{character}.
 }
 \description{
 Babel is a tool that helps you write code in the latest version of

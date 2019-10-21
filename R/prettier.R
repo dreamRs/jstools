@@ -1,7 +1,9 @@
 
-#' @title Prettier
+#' @title Prettier - opinionated code formatter.
 #'
-#' @description Prettier is an opinionated code formatter.
+#' @description Prettier is an opinionated code formatter. It enforces a
+#'  consistent style by parsing your code and re-printing it with its own
+#'  rules that take the maximum line length into account, wrapping code when necessary.
 #'
 #' @param input Path to JavaScript file(s).
 #' @param options Options for terser, see \url{https://prettier.io/docs/en/options.html }.
