@@ -1,5 +1,5 @@
 
-#' @title terser
+#' @title Terser
 #'
 #' @description JavaScript parser, mangler and compressor toolkit for ES6+.
 #'

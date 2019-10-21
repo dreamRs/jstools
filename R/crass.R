@@ -1,7 +1,8 @@
 
 #' @title crass
 #'
-#' A CSS minification, pretty printing, and general utility library written in JS.
+#' @description A CSS minification, pretty printing,
+#'  and general utility library written in JS.
 #'
 #' @param input Path to a CSS file.
 #' @param pretty Pretty print result? Otherwise result is minified.

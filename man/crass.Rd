@@ -3,9 +3,7 @@
 \name{crass}
 \alias{crass}
 \alias{crass_file}
-\title{crass
-
-A CSS minification, pretty printing, and general utility library written in JS.}
+\title{crass}
 \usage{
 crass_file(input, pretty = FALSE, output = NULL)
 
@@ -24,9 +22,8 @@ crass(code, pretty = FALSE)
 a \code{character}.
 }
 \description{
-crass
-
-A CSS minification, pretty printing, and general utility library written in JS.
+A CSS minification, pretty printing,
+ and general utility library written in JS.
 }
 \examples{
 
