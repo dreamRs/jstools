@@ -6,7 +6,7 @@
 #'  natively, Babel will help you compile those features down to a supported version.
 #'
 #' @param input Path to JavaScript file.
-#' @param options Options for terser, see \url{https://babeljs.io/docs/en/options}.
+#' @param options Options for babel, see \url{https://babeljs.io/docs/en/options}.
 #' @param output Path where to write transformed code.
 #'
 #' @return a \code{character}.

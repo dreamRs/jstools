@@ -15,7 +15,7 @@ babel_options(presets = list("es2015"), sourceType = "script", ...)
 \arguments{
 \item{input}{Path to JavaScript file.}
 
-\item{options}{Options for terser, see \url{https://babeljs.io/docs/en/options}.}
+\item{options}{Options for babel, see \url{https://babeljs.io/docs/en/options}.}
 
 \item{output}{Path where to write transformed code.}
 
