@@ -14,7 +14,7 @@ jshint_options(undef = TRUE, unused = "vars", browser = TRUE,
   jquery = FALSE, devel = FALSE, ...)
 }
 \arguments{
-\item{input}{Path to a JavaScript file.}
+\item{input}{Path to JavaScript file(s).}
 
 \item{options}{Options for JSHint, see \url{https://jshint.com/docs/options}.}
 
