@@ -6,7 +6,7 @@
 #'  for shorter form) and restructuring (merge of declarations, rulesets and so
 #'  on). As a result your CSS becomes much smaller.
 #'
-#' @param input Path to CSS file.
+#' @param input Path to one or more CSS files.
 #' @param options Options for CSSO, see \url{https://github.com/css/csso}.
 #' @param output Path where to write minified code.
 #'
@@ -18,10 +18,13 @@
 #' @example examples/ex-csso.R
 csso_file <- function(input, options = csso_options(), output = NULL) {
   input <- normalizePath(path = input, mustWork = TRUE)
-  input <- readLines(con = input, encoding = "UTF-8")
+  input <- lapply(input, readLines, encoding = "UTF-8")
+  input <- unlist(input)
   result <- csso(code = input, options = options)
   if (!is.null(output)) {
     writeLines(text = result, con = output)
+  } else {
+    cat(result)
   }
   return(invisible(result))
 }

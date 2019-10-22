@@ -6,19 +6,22 @@
 #'  operate on the string source instead, which makes it impossible
 #'  to perform all types of optimizations.
 #'
-#' @param input Path to a CSS file.
+#' @param input Path to one or more CSS files.
 #' @param pretty Pretty print result? Otherwise result is minified.
 #' @param output Path where to write optimized code.
 #'
 #' @return a \code{character}.
 #' @export
 #'
+#' @note Source repository: \url{https://github.com/mattbasta/crass}.
+#'
 #' @name crass
 #'
 #' @example examples/ex-crass.R
 crass_file <- function(input, pretty = FALSE, output = NULL) {
   input <- normalizePath(path = input, mustWork = TRUE)
-  input <- readLines(con = input, encoding = "UTF-8")
+  input <- lapply(input, readLines, encoding = "UTF-8")
+  input <- unlist(input)
   result <- crass(code = input, pretty = pretty)
   if (!is.null(output)) {
     writeLines(text = result, con = output)

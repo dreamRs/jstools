@@ -13,7 +13,7 @@ csso(code, options = csso_options())
 csso_options(restructure = TRUE, ...)
 }
 \arguments{
-\item{input}{Path to CSS file.}
+\item{input}{Path to one or more CSS files.}
 
 \item{options}{Options for CSSO, see \url{https://github.com/css/csso}.}
 
@@ -35,5 +35,11 @@ CSSO (CSS Optimizer) is a CSS minifier. It performs three sort
  on). As a result your CSS becomes much smaller.
 }
 \examples{
+# Merge two rules
 csso(".foo { color: #ff0000; }\\n.bar { color: rgba(255, 0, 0, 1); }")
+
+# With a file
+path <- system.file("testfiles/example.css", package = "jstools")
+csso_file(input = path)
+
 }

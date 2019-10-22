@@ -10,7 +10,7 @@ crass_file(input, pretty = FALSE, output = NULL)
 crass(code, pretty = FALSE)
 }
 \arguments{
-\item{input}{Path to a CSS file.}
+\item{input}{Path to one or more CSS files.}
 
 \item{pretty}{Pretty print result? Otherwise result is minified.}
 
@@ -27,10 +27,17 @@ Crass is one of only a handful of CSS minifiers that
  operate on the string source instead, which makes it impossible
  to perform all types of optimizations.
 }
+\note{
+Source repository: \url{https://github.com/mattbasta/crass}.
+}
 \examples{
+# Minimize and update rules
+crass("b { font-weight: bold; }")
 
-crass("b {font-weight: bold;}")
-
+# With a file
 path <- system.file("testfiles/example.css", package = "jstools")
 crass_file(input = path)
+
+# You can concatenate several files together
+#> crass_file(input = c("file1.css", "file2.css"), output = "file.min.css")
 }
