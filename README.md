@@ -30,14 +30,25 @@ remotes::install_github("dreamRs/jstools")
 
 Via <https://prettier.io/>
 
-`prettier()` allow to reformat JavaScript code:
+`prettier_js()` allow to reformat JavaScript code:
 
 ``` r
-prettier("function add(first, second) { return first + second; }")
+prettier_js("function add(first, second) { return first + second; }")
 ```
 
     function add(first, second) {
       return first + second;
+    }
+
+`pettier_css()` does the same thing for CSS:
+
+``` r
+prettier_css("b{font-weight: bold;color:red;}")
+```
+
+    b {
+      font-weight: bold;
+      color: red;
     }
 
 You can reformat a file with:

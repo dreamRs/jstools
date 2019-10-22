@@ -17,8 +17,14 @@
 #' @example examples/ex-prettier.R
 prettier_file <- function(input, options = prettier_options(), output = NULL) {
   input <- normalizePath(path = input, mustWork = TRUE)
+  file_ext <- gsub(pattern = ".*\\.([0-9a-zA-Z]+)$", replacement = "\\1", x = basename(input))
+  file_ext <- tolower(file_ext)
   input <- readLines(con = input, encoding = "UTF-8")
-  result <- prettier(code = input, options = options)
+  if (file_ext %in% c("css", "scss", "less")) {
+    result <- prettier_css(code = input, options = options)
+  } else {
+    result <- prettier_js(code = input, options = options)
+  }
   if (!is.null(output)) {
     writeLines(text = result, con = output)
   } else {
@@ -34,13 +40,27 @@ prettier_file <- function(input, options = prettier_options(), output = NULL) {
 #' @export
 #'
 #' @importFrom V8 v8
-prettier <- function(code, options = prettier_options()) {
+prettier_js <- function(code, options = prettier_options()) {
   ctx <- v8()
-  ctx$source(file = system.file("assets/prettier/standalone.js", package = "jstools"))
+  ctx$source(file = system.file("assets/prettier/standalone.min.js", package = "jstools"))
   ctx$source(file = system.file("assets/prettier/parser-babylon.js", package = "jstools"))
   ctx$assign("code", paste(code, collapse = "\n"))
   ctx$eval('prettier.format(code, { parser: "babel", plugins: prettierPlugins });')
 }
+
+#' @rdname prettier
+#'
+#' @export
+#'
+#' @importFrom V8 v8
+prettier_css <- function(code, options = prettier_options()) {
+  ctx <- v8()
+  ctx$source(file = system.file("assets/prettier/standalone.min.js", package = "jstools"))
+  ctx$source(file = system.file("assets/prettier/parser-postcss.min.js", package = "jstools"))
+  ctx$assign("code", paste(code, collapse = "\n"))
+  ctx$eval('prettier.format(code, { parser: "css", plugins: prettierPlugins });')
+}
+
 
 #' @param ... Other options to use, see \url{https://prettier.io/docs/en/options.html} for details.
 #'
