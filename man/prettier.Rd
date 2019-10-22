@@ -13,7 +13,7 @@ prettier(code, options = prettier_options())
 prettier_options(...)
 }
 \arguments{
-\item{input}{Path to JavaScript file(s).}
+\item{input}{Path to one or more JavaScript files.}
 
 \item{options}{Options for terser, see \url{https://prettier.io/docs/en/options.html }.}
 

@@ -3,7 +3,7 @@
 #'
 #' @description JavaScript parser, mangler and compressor toolkit for ES6+.
 #'
-#' @param input Path to JavaScript file(s).
+#' @param input Path to one or more JavaScript files.
 #' @param options Options for terser, see \url{https://terser.org/docs/api-reference}.
 #' @param output Path where to write optimized code.
 #'

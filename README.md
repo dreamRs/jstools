@@ -153,3 +153,43 @@ babel("[1, 2, 3].map((n) => n + 1);")
     [1, 2, 3].map(function (n) {
       return n + 1;
     });
+
+## Crass : CSS minifier and optimizer
+
+Via <https://github.com/mattbasta/crass>
+
+Minimize and optimize CSS code :
+
+``` r
+crass("b { font-weight: bold; }")
+#> [1] "b{font-weight:700}"
+```
+
+You can concatenate several files together:
+
+``` r
+crass_file(
+  input = c("path/to/file1.css", "path/to/file2.css"), 
+  output = "path/to/file.min.css"
+)
+```
+
+## CSSO : CSS minifier with structural optimizations
+
+Via <https://github.com/css/csso>
+
+Merge identical rules together:
+
+``` r
+csso(".foo { color: #ff0000; }\n.bar { color: rgba(255, 0, 0, 1); }")
+#> [1] ".bar,.foo{color:red}"
+```
+
+You can also concatenate several files together:
+
+``` r
+csso_file(
+  input = c("path/to/file1.css", "path/to/file2.css"), 
+  output = "path/to/file.min.css"
+)
+```

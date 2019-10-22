@@ -5,7 +5,7 @@
 #'  consistent style by parsing your code and re-printing it with its own
 #'  rules that take the maximum line length into account, wrapping code when necessary.
 #'
-#' @param input Path to JavaScript file(s).
+#' @param input Path to one or more JavaScript files.
 #' @param options Options for terser, see \url{https://prettier.io/docs/en/options.html }.
 #' @param output Path where to write optimized code.
 #'
