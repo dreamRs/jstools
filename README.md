@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/dreamRs/jstools.svg?branch=master)](https://travis-ci.org/dreamRs/jstools)
 <!-- badges: end -->
 
 > Set of tools to work with JavaScript and CSS (and addins to
