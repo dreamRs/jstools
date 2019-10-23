@@ -17,7 +17,7 @@ prettier_css(code, options = prettier_options())
 prettier_options(...)
 }
 \arguments{
-\item{input}{Path to one or more JavaScript files.}
+\item{input}{Path to one or more JavaScript or CSS files.}
 
 \item{options}{Options for terser, see \url{https://prettier.io/docs/en/options.html }.}
 
