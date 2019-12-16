@@ -36,7 +36,7 @@ CSSO (CSS Optimizer) is a CSS minifier. It performs three sort
 }
 \examples{
 # Merge two rules
-csso(".foo { color: #ff0000; }\\n.bar { color: rgba(255, 0, 0, 1); }")
+csso(".foo { color: #ff0000; }\n.bar { color: rgba(255, 0, 0, 1); }")
 
 # With a file
 path <- system.file("testfiles/example.css", package = "jstools")

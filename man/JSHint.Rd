@@ -10,8 +10,14 @@ jshint_file(input, options = jshint_options())
 
 jshint(code, options = jshint_options())
 
-jshint_options(undef = TRUE, unused = "vars", browser = TRUE,
-  jquery = FALSE, devel = FALSE, ...)
+jshint_options(
+  undef = TRUE,
+  unused = "vars",
+  browser = TRUE,
+  jquery = FALSE,
+  devel = FALSE,
+  ...
+)
 }
 \arguments{
 \item{input}{Path to JavaScript file(s).}

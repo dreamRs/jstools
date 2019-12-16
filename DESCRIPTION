@@ -1,6 +1,6 @@
 Package: jstools
 Title: Tools to Work with JavaScript and CSS
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: c(
   person("Victor", "Perrier", email = "victor.perrier@dreamrs.fr", role = c("aut", "cre")),
   person("Fanny", "Meyer", role = "aut"),
@@ -21,4 +21,4 @@ Imports:
     V8,
     cli,
     rstudioapi
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
