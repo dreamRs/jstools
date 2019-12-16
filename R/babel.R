@@ -20,7 +20,7 @@ babel_file <- function(input, options = babel_options(), output = NULL) {
   input <- readLines(con = input, encoding = "UTF-8")
   result <- babel(code = input, options = options)
   if (!is.null(output)) {
-    writeLines(text = result$code, con = output)
+    writeLines(text = result, con = output)
   }
   return(invisible(result))
 }
@@ -58,3 +58,11 @@ babel_options <- function(presets = list("es2015"), sourceType = "script", ...) 
     ...
   )
 }
+
+
+babel_addin <- function() {
+  context <- rstudioapi::getSourceEditorContext()
+  babel_file(input = context$path, output = context$path)
+}
+
+

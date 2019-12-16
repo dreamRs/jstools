@@ -7,3 +7,8 @@ Name: Prettier
 Description: Launch Prettier on active JS script
 Binding: prettier_addin
 Interactive: false
+
+Name: Babel
+Description: Launch Babel on active JS script
+Binding: babel_addin
+Interactive: false
