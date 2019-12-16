@@ -14,7 +14,16 @@
 #'
 #' @name babel
 #'
-#' @example examples/ex-babel.R
+#' @examples
+#' \dontrun{
+#'
+#'   # Template literals are not supported in ES5
+#'   babel("var filename = `${Date.now()}.png`;")
+#'
+#'   # Arrow function neither
+#'   babel("[1, 2, 3].map((n) => n + 1);")
+#'
+#' }
 babel_file <- function(input, options = babel_options(), output = NULL) {
   input <- normalizePath(path = input, mustWork = TRUE)
   input <- readLines(con = input, encoding = "UTF-8")

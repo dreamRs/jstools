@@ -36,10 +36,13 @@ Babel is a tool that helps you write code in the latest version of
  natively, Babel will help you compile those features down to a supported version.
 }
 \examples{
-# Template literals are not supported in ES5
-babel("var filename = `${Date.now()}.png`;")
+\dontrun{
 
-# Arrow function neither
-babel("[1, 2, 3].map((n) => n + 1);")
+  # Template literals are not supported in ES5
+  babel("var filename = `${Date.now()}.png`;")
 
+  # Arrow function neither
+  babel("[1, 2, 3].map((n) => n + 1);")
+
+}
 }
