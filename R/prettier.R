@@ -42,7 +42,7 @@ prettier_file <- function(input, options = prettier_options(), output = NULL) {
 #' @importFrom V8 v8
 prettier_js <- function(code, options = prettier_options()) {
   ctx <- v8()
-  ctx$source(file = system.file("assets/babel-polyfill/polyfill.min.js", package = "jstools"))
+  # ctx$source(file = system.file("assets/babel-polyfill/polyfill.min.js", package = "jstools"))
   ctx$source(file = system.file("assets/prettier/standalone.min.js", package = "jstools"))
   ctx$source(file = system.file("assets/prettier/parser-babylon.js", package = "jstools"))
   ctx$assign("code", paste(code, collapse = "\n"))
@@ -56,7 +56,7 @@ prettier_js <- function(code, options = prettier_options()) {
 #' @importFrom V8 v8
 prettier_css <- function(code, options = prettier_options()) {
   ctx <- v8()
-  ctx$source(file = system.file("assets/babel-polyfill/polyfill.min.js", package = "jstools"))
+  # ctx$source(file = system.file("assets/babel-polyfill/polyfill.min.js", package = "jstools"))
   ctx$source(file = system.file("assets/prettier/standalone.min.js", package = "jstools"))
   ctx$source(file = system.file("assets/prettier/parser-postcss.min.js", package = "jstools"))
   ctx$assign("code", paste(code, collapse = "\n"))

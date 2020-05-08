@@ -11,7 +11,7 @@ Authors@R: c(
   person("Babel maintainers", role = c("ctb", "cph"), comment = "Babel library"),
   person("Sergey", "Kryzhanovsky", role = c("ctb", "cph"), comment = "CSSO library"))
 Description: Set of tools to work with JavaScript and CSS: detect errors in
-  JavaScript code, help format code, minify JS and CSS.
+  JavaScript code, help format code, minify JS and CSS files.
 URL: https://github.com/dreamRs/jstools
 BugReports: https://github.com/dreamRs/jstools/issues
 License: GPL-3
@@ -21,4 +21,4 @@ Imports:
     V8,
     cli,
     rstudioapi
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0

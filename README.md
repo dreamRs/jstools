@@ -9,6 +9,8 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
 status](https://travis-ci.org/dreamRs/jstools.svg?branch=master)](https://travis-ci.org/dreamRs/jstools)
+[![R build
+status](https://github.com/dreamRs/jstools/workflows/R-CMD-check/badge.svg)](https://github.com/dreamRs/jstools/actions)
 <!-- badges: end -->
 
 > Set of tools to work with JavaScript and CSS (and addins to
@@ -90,20 +92,13 @@ Via <https://jshint.com/>
 ``` r
 res <- jshint(c("var a = 2;", "var foo = 1;", "b = 3", "a + c"))
 res$errors[, c("line", "reason")]
-#>   line
-#> 1    3
-#> 2    4
-#> 3    4
-#> 4    3
-#> 5    4
-#> 6    2
-#>                                                                   reason
-#> 1                                                     Missing semicolon.
-#> 2 Expected an assignment or function call and instead saw an expression.
-#> 3                                                     Missing semicolon.
-#> 4                                                    'b' is not defined.
-#> 5                                                    'c' is not defined.
-#> 6                                       'foo' is defined but never used.
+#>   line                                                                 reason
+#> 1    3                                                     Missing semicolon.
+#> 2    4 Expected an assignment or function call and instead saw an expression.
+#> 3    4                                                     Missing semicolon.
+#> 4    3                                                    'b' is not defined.
+#> 5    4                                                    'c' is not defined.
+#> 6    2                                       'foo' is defined but never used.
 ```
 
 Use with a file :

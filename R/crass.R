@@ -40,7 +40,7 @@ crass_file <- function(input, pretty = FALSE, output = NULL) {
 #' @importFrom V8 v8
 crass <- function(code, pretty = FALSE) {
   ctx <- v8()
-  ctx$source(file = system.file("assets/babel-polyfill/polyfill.min.js", package = "jstools"))
+  # ctx$source(file = system.file("assets/babel-polyfill/polyfill.min.js", package = "jstools"))
   ctx$source(file = system.file("assets/crass/crass.js", package = "jstools"))
   ctx$assign("code", paste(code, collapse = "\n"))
   ctx$eval("var parsed = crass.parse(code);")
