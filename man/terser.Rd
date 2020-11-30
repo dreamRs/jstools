@@ -54,8 +54,8 @@ path <- system.file("testfiles/htmlwidgets.js", package = "jstools")
 o <- terser_options(
   sourceMap = list(
     root = "../../htmlwidgets-sources",
-    filename = "file.min.js",
-    url = "file.min.js.map",
+    filename = "htmlwidgets.min.js",
+    url = "htmlwidgets.min.js.map",
     includeSources = TRUE
   )
 )
