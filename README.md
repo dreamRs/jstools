@@ -83,6 +83,26 @@ terser_file(input = "path/to/file.js", output = "path/to/file.min.js")
 terser_file(input = c("path/to/file1.js", "path/to/file2.js"), output = "path/to/file.min.js")
 ```
 
+Source maps are crucial to the debugging process, thereby making it possible to reconstruct the original
+JS code starting from a minified script. To correctly generate a source map, pass the __sourceMap__ option to `terser_options`. 
+`includeSources = TRUE` is mandatory so that files may be retrieved by the web browser developer tools.
+The folder will have the provided __root__ as name so it is important to name it consistently:
+
+```r
+path <- system.file("testfiles/htmlwidgets.js", package = "jstools")
+# source maps options
+o <- terser_options(
+  sourceMap = list(
+    root = "../../htmlwidgets-sources",
+    filename = "file.min.js",
+    url = "file.min.js.map",
+    includeSources = TRUE
+  )
+)
+# returns a list containing the minified code an the source map
+terser_file(input = path, options = o)
+```
+
 ## JSHint : code validation
 
 Via <https://jshint.com/>
