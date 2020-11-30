@@ -88,6 +88,26 @@ terser_file(input = "path/to/file.js", output = "path/to/file.min.js")
 terser_file(input = c("path/to/file1.js", "path/to/file2.js"), output = "path/to/file.min.js")
 ```
 
+Source maps are crucial to the debugging process, thereby making it possible to reconstruct the original
+JS code starting from a minified script. To correctly generate a source map, pass the __sourceMap__ option to `terser_options`. 
+`includeSources = TRUE` is mandatory so that files may be retrieved by the web browser developer tools.
+The folder will have the provided __root__ as name so it is important to name it consistently:
+
+```{r}
+path <- system.file("testfiles/htmlwidgets.js", package = "jstools")
+# source maps options
+o <- terser_options(
+  sourceMap = list(
+    root = "../../htmlwidgets-sources",
+    filename = "htmlwidgets.min.js",
+    url = "htmlwidgets.min.js.map",
+    includeSources = TRUE
+  )
+)
+# returns a list containing the minified code an the source map
+terser_file(input = path, options = o)
+```
+
 
 ## JSHint : code validation
 
@@ -105,7 +125,6 @@ Use with a file :
 ```{r}
 path <- system.file("testfiles/example.js", package = "jstools")
 jshint_file(input = path)
-
 ```
 
 To validate a Shiny script, you can add `jQuery` and `Shiny` as global variables (same for `Htmlwidgets`:
@@ -118,9 +137,9 @@ You can check several scripts at once (for example custom Shiny input bindings i
 
 ```{r, eval=FALSE}
 bindings <- list.files(
-  path = system.file("assets", package = "shinyWidgets"), 
+  path = system.file("assets", package = "shinyWidgets"),
   pattern = "bindings\\.js$",
-  recursive = TRUE, 
+  recursive = TRUE,
   full.names = TRUE
 )
 jshint_file(input = bindings, options = jshint_options(jquery = TRUE, globals = list("Shiny")))
@@ -172,7 +191,7 @@ You can concatenate several files together:
 
 ```{r, eval=FALSE}
 crass_file(
-  input = c("path/to/file1.css", "path/to/file2.css"), 
+  input = c("path/to/file1.css", "path/to/file2.css"),
   output = "path/to/file.min.css"
 )
 ```
@@ -193,7 +212,7 @@ You can also concatenate several files together:
 
 ```{r, eval=FALSE}
 csso_file(
-  input = c("path/to/file1.css", "path/to/file2.css"), 
+  input = c("path/to/file1.css", "path/to/file2.css"),
   output = "path/to/file.min.css"
 )
 ```

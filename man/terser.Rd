@@ -15,14 +15,20 @@ terser_options(...)
 \arguments{
 \item{input}{Path to one or more JavaScript files.}
 
-\item{options}{Options for terser, see \url{https://terser.org/docs/api-reference}.}
+\item{options}{Options for terser, see \url{https://terser.org/docs/api-reference}
+and \url{https://terser.org/docs/cli-usage}.}
 
 \item{output}{Path where to write optimized code.}
 
 \item{code}{Character vector where each element represent a line of JavaScript code,
 or a list of character vectors.}
 
-\item{...}{Other options to use, see \url{https://terser.org/docs/api-reference} for details.}
+\item{...}{Other options to use, see \url{https://terser.org/docs/api-reference}
+and \url{https://terser.org/docs/cli-usage} for details.
+Source maps are crucial to the debugging process, thereby making it possible to reconstruct the original
+JS code starting from a minified script. To correctly generate source map, pass the \code{sourceMap} option
+(see example). \code{includeSources = TRUE} is mandatory so that files may be retrieved by the web browser developer tools.
+The folder will have the provided \code{root} as name so it's important to name it consistently!}
 }
 \value{
 a \code{list}.
@@ -40,10 +46,19 @@ terser(list(
   "file2.js" = "add(1 + 2, 3 + 4);"
 ))
 # equivalent to:
-#> terser_file(c("file1.js", "file2.js"))
+# > terser_file(c("file1.js", "file2.js"))
 
 # With a file
 path <- system.file("testfiles/htmlwidgets.js", package = "jstools")
-terser_file(input = path)
-
+# source maps options
+o <- terser_options(
+  sourceMap = list(
+    root = "../../htmlwidgets-sources",
+    filename = "htmlwidgets.min.js",
+    url = "htmlwidgets.min.js.map",
+    includeSources = TRUE
+  )
+)
+# returns a list containing the minified code an the source map
+terser_file(input = path, options = o)
 }

@@ -4,7 +4,8 @@
 #' @description JavaScript parser, mangler and compressor toolkit for ES6+.
 #'
 #' @param input Path to one or more JavaScript files.
-#' @param options Options for terser, see \url{https://terser.org/docs/api-reference}.
+#' @param options Options for terser, see \url{https://terser.org/docs/api-reference}
+#' and \url{https://terser.org/docs/cli-usage}.
 #' @param output Path where to write optimized code.
 #'
 #' @return a \code{list}.
@@ -28,6 +29,10 @@ terser_file <- function(input, options = terser_options(), output = NULL) {
   } else {
     if (!is.null(output)) {
       writeLines(text = result$code, con = output)
+      # save source map
+      if (length(result$map) > 0) {
+        writeLines(text = result$map, con = paste0(output, ".map"))
+      }
       return(invisible(result))
     } else {
       return(result)
@@ -58,7 +63,12 @@ terser <- function(code, options = terser_options()) {
   ctx$get("result")
 }
 
-#' @param ... Other options to use, see \url{https://terser.org/docs/api-reference} for details.
+#' @param ... Other options to use, see \url{https://terser.org/docs/api-reference}
+#' and \url{https://terser.org/docs/cli-usage} for details.
+#' Source maps are crucial to the debugging process, thereby making it possible to reconstruct the original
+#' JS code starting from a minified script. To correctly generate source map, pass the \code{sourceMap} option
+#' (see example). \code{includeSources = TRUE} is mandatory so that files may be retrieved by the web browser developer tools.
+#' The folder will have the provided \code{root} as name so it's important to name it consistently!
 #'
 #' @rdname terser
 #'
